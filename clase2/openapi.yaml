@@ -1,0 +1,64 @@
+openapi: 3.0.3
+info:
+  title: Productos API
+  description: API de productos para la clase de Arquitectura de Aplicaciones — UADE
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+    description: Servidor local de desarrollo
+
+paths:
+  /api/productos:
+    get:
+      summary: Obtener lista de productos
+      operationId: getProductos
+      tags:
+        - Productos
+      responses:
+        '200':
+          description: Lista de productos obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Producto'
+              example:
+                - id: 1
+                  nombre: "Notebook Lenovo ThinkPad"
+                  precio: 1299.99
+                  categoria: "Electrónica"
+                - id: 2
+                  nombre: "Monitor Samsung 27\""
+                  precio: 449.99
+                  categoria: "Periféricos"
+                - id: 3
+                  nombre: "Teclado Mecánico Keychron"
+                  precio: 89.99
+                  categoria: "Periféricos"
+
+components:
+  schemas:
+    Producto:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        nombre:
+          type: string
+          example: "Notebook Lenovo ThinkPad"
+        precio:
+          type: number
+          format: double
+          example: 1299.99
+        categoria:
+          type: string
+          example: "Electrónica"
+      required:
+        - id
+        - nombre
+        - precio
+        - categoria
