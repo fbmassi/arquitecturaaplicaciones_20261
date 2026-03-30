@@ -32,6 +32,7 @@ public class SecurityConfig {
         return http
             .authorizeExchange(exchange -> exchange
                 .pathMatchers("/auth/**").permitAll()
+                .pathMatchers("/api/productos/**").permitAll()
                 .pathMatchers("/actuator/**", "/h2-console/**").permitAll()
                 .anyExchange().authenticated()
             )

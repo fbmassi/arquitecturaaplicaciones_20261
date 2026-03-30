@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: productos-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: false
   datasource:
     url: jdbc:h2:mem:productosdb
     driver-class-name: org.h2.Driver

@@ -1,0 +1,44 @@
+### Productos Service Requests
+
+@gateway = http://localhost:8080
+@service = http://localhost:8085
+
+### 1. Test de conectividad (vía Gateway)
+GET {{gateway}}/api/productos/test
+
+### 2. Listar todos los productos (vía Gateway)
+GET {{gateway}}/api/productos
+Accept: application/json
+
+### 3. Obtener un producto por ID (vía Gateway)
+GET {{gateway}}/api/productos/1
+Accept: application/json
+
+### 4. Crear un nuevo producto (vía Gateway)
+POST {{gateway}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Silla Gamer RGB",
+  "descripcion": "Silla ergonómica con luces LED",
+  "precio": 250.0,
+  "stock": 15
+}
+
+### 5. Actualizar un producto existente (vía Gateway)
+PUT {{gateway}}/api/productos/1
+Content-Type: application/json
+
+{
+  "nombre": "Laptop Pro 15 M2",
+  "descripcion": "Laptop de alto rendimiento 15 pulgadas con chip M2",
+  "precio": 1700.0,
+  "stock": 8
+}
+
+### 6. Eliminar un producto (vía Gateway)
+DELETE {{gateway}}/api/productos/5
+
+### 7. Listar productos (Acceso directo al microservicio)
+GET {{service}}/api/productos
+Accept: application/json

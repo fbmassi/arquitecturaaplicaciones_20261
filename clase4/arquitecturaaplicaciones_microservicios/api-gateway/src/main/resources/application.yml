@@ -27,8 +27,6 @@ spring:
           uri: lb://productos-service
           predicates:
             - Path=/api/productos/**
-          filters:
-            - AuthorizationHeader
 
 eureka:
   instance:

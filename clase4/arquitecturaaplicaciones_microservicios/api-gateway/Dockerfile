@@ -8,6 +8,7 @@ COPY auth-service/pom.xml    ./auth-service/
 COPY api-gateway/pom.xml     ./api-gateway/
 COPY inventory-service/pom.xml ./inventory-service/
 COPY notification-service/pom.xml ./notification-service/
+COPY productos-service/pom.xml   ./productos-service/
 
 COPY api-gateway/src ./api-gateway/src
 
